@@ -10,6 +10,7 @@ const router = createBrowserRouter([
       {
         index: true,
         path: "/",
+        loader: () => fetch("/skilldata.json"),
         Component: Home,
       },
     ],

@@ -10,7 +10,7 @@ const Navbar = () => {
       isActive ? "text-red-600 font-bold" : "text-gray-700 hover:text-red-600"
     }`;
   return (
-    <nav className="pt-5  sticky top-0 z-50">
+    <nav className="bg-[#faf0f0] pt-5  sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center flex-1 justify-between">
@@ -46,7 +46,7 @@ const Navbar = () => {
               <div className="space-x-2">
                 <Link
                   to="/login"
-                  className="text-[#FF1E1E] hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 border-2 border-transparent hover:border-0 hover:bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] relative bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] bg-clip-text"
+                  className="text-[#FF1E1E] hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 border-2 border-transparent hover:border-0 hover:bg-linear-to-r from-[#FF1E1E] to-[#FF6560] relative bg-linear-to-r from-[#FF1E1E] to-[#FF6560] bg-clip-text"
                 >
                   <span className="absolute inset-0 rounded-md border-2 border-transparent bg-linear-to-r from-[#FF1E1E] to-[#FF6560] -z-10 opacity-20 hover:opacity-100 transition-all duration-300"></span>
                   Login
