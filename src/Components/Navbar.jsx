@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="bg-[#faf0f0] pt-5  sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex  items-center justify-between h-16">
           <div className="flex items-center flex-1 justify-between">
             <Link
               to="/"
@@ -21,7 +21,7 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt="SkillSwap Logo"
-                className="h-32 w-32 -mr-10"
+                className="h-32 w-32 -ml-[35px] -mr-10"
               />
               <h4 className="text-[#e42625]"> SkillSwap</h4>
             </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               type="button"
-              className="bg-gray-200 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+              className="bg-[#fbd2d1] inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
             >
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (

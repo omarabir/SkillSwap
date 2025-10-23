@@ -5,6 +5,7 @@ import SkillCard from "../Components/SkillCard";
 import LoadingSpinner from "../Components/LoadingSpinner";
 import AOS from "aos";
 import HowItWorks from "../Components/HowItWorks";
+import TopProviders from "../Components/TopProviders";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,6 +58,7 @@ const Home = () => {
       </section>
 
       <HowItWorks></HowItWorks>
+      <TopProviders skills={skills}></TopProviders>
     </div>
   );
 };

@@ -52,7 +52,7 @@ const BannerSlider = () => {
                     {slide.title}
                   </h1>
                   <p>{slide.subtitle}</p>
-                  <button className="mt-8 px-8 py-3 bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition-colors">
+                  <button className="mt-8 px-2 lg:px-8 py-1 lg:py-3 bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white font-semibold rounded-lg shadow-md  transition-colors">
                     Get Started
                   </button>
                 </div>
