@@ -1,3 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Swiper navigation & pagination - default red arrows, no hover color change */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ff1e1e !important;
+    /* keep arrow icon red by default */
+    background: rgba(255, 30, 30, 0.04);
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* prevent color change on hover - keep red */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #ff1e1e !important;
+    transform: translateY(-1px);
+    background: rgba(255, 30, 30, 0.06);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #ff1e1e !important;
+}
