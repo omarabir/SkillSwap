@@ -4,16 +4,16 @@ import { Link, useLoaderData } from "react-router";
 import SkillCard from "../Components/SkillCard";
 import LoadingSpinner from "../Components/LoadingSpinner";
 import AOS from "aos";
+import HowItWorks from "../Components/HowItWorks";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const skills = useLoaderData();
 
   useEffect(() => {
-   
     const timer = setTimeout(() => {
       setIsLoading(false);
-   
+
       AOS.refresh();
     }, 1500);
     return () => clearTimeout(timer);
@@ -55,6 +55,8 @@ const Home = () => {
           )}
         </div>
       </section>
+
+      <HowItWorks></HowItWorks>
     </div>
   );
 };
