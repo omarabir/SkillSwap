@@ -10,10 +10,10 @@ const Home = () => {
   const skills = useLoaderData();
 
   useEffect(() => {
-    // Simulate loading time (remove this in production)
+   
     const timer = setTimeout(() => {
       setIsLoading(false);
-      // Refresh AOS when content loads
+   
       AOS.refresh();
     }, 1500);
     return () => clearTimeout(timer);
@@ -44,7 +44,7 @@ const Home = () => {
               {skills.length > 6 && (
                 <div className="mt-12 text-center">
                   <Link
-                    to="/skills"
+                    to="/all-skills"
                     className="font-semibold text-center bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white py-2 px-2 rounded-md transition-colors duration-300"
                   >
                     View All Skills

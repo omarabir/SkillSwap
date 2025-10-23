@@ -31,7 +31,7 @@ const Navbar = () => {
                   Home
                 </NavLink>
                 <NavLink to="/all-skills" className={navLinkClass}>
-                  All Skills
+                  Courses
                 </NavLink>
 
                 <NavLink to="/profile" className={navLinkClass}>
