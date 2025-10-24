@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router";
 import router from "./Routes/Routes";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Toaster } from "react-hot-toast";
 
 // Initialize AOS
 AOS.init({
@@ -16,5 +17,6 @@ AOS.init({
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router}></RouterProvider>
+    <Toaster></Toaster>
   </StrictMode>
 );
