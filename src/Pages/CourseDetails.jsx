@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router";
 
 import NotFoundPage from "./NotFoundPage";
+import toast from "react-hot-toast";
 
 const CourseDetails = () => {
   const skills = useLoaderData();
@@ -10,6 +11,10 @@ const CourseDetails = () => {
   if (!skill) {
     return <NotFoundPage />;
   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.success("Your session request has been submitted!");
+  };
 
   return (
     <div className=" py-12">
@@ -64,7 +69,7 @@ const CourseDetails = () => {
             </div>
           </div>
         </div>
-        <form className="mt-20 max-w-xl text-black">
+        <form onSubmit={handleSubmit} className="mt-20 max-w-xl mx-auto bg-[#fae5e3] shadow-md rounded p-10 text-black">
           <h3 className="text-xl font-bold mb-4">Book a Session</h3>
 
           <div>
@@ -77,9 +82,8 @@ const CourseDetails = () => {
             <input
               type="text"
               id="name"
-              value=""
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md p-2 "
+              className="mt-1 block w-full border-2 border-red-300 rounded-md p-2 "
             />
           </div>
 
@@ -93,9 +97,8 @@ const CourseDetails = () => {
             <input
               type="email"
               id="email"
-              value=""
               required
-              className="mt-1 block w-full border border-gray-300 rounded-md p-2 "
+              className="mt-1 block w-full border-2 border-red-300 rounded-md p-2 "
             />
           </div>
 

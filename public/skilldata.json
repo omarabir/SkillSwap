@@ -9,7 +9,7 @@
     "rating": 4.8,
     "slotsAvailable": 3,
     "description": "Learn the fundamentals of acoustic guitar, including chords, strumming patterns, and basic music theory. Perfect for absolute beginners. No prior experience needed. Guitars available for rent.",
-    "image": "https://picsum.photos/seed/Music/600/400",
+    "image": "https://i.ibb.co.com/BVwWJnXN/80-c2-Vs-Zl9pc29s-YXRpb24t-MDg.jpg",
     "category": "Music"
   },
   {
@@ -22,7 +22,7 @@
     "rating": 4.9,
     "slotsAvailable": 5,
     "description": "Immersive Spanish conversation practice to build fluency and confidence. We will cover common phrases, cultural nuances, and practical vocabulary for travel and daily life.",
-    "image": "https://picsum.photos/seed/Language/600/400",
+    "image": "https://i.ibb.co.com/nswDVRpK/10170121.jpg",
     "category": "Language"
   },
   {
@@ -35,7 +35,7 @@
     "rating": 4.7,
     "slotsAvailable": 4,
     "description": "A hands-on introduction to Python programming. You'll learn about variables, data types, loops, and functions by building simple applications. Ideal for aspiring developers.",
-    "image": "https://picsum.photos/seed/Technology/600/400",
+    "image": "https://i.ibb.co.com/FbsMD2cW/12064756-4882467.jpg",
     "category": "Technology"
   },
   {
@@ -48,7 +48,7 @@
     "rating": 5.0,
     "slotsAvailable": 8,
     "description": "A gentle Vinyasa flow class focused on connecting breath with movement, followed by a guided meditation session to reduce stress and improve focus. All levels are welcome.",
-    "image": "https://picsum.photos/seed/Wellness/600/400",
+    "image": "https://i.ibb.co.com/gLTdLxMH/8247648-3860223.jpg",
     "category": "Wellness"
   },
   {
@@ -61,12 +61,12 @@
     "rating": 4.8,
     "slotsAvailable": 2,
     "description": "Unlock the secrets to baking delicious artisanal bread at home. This workshop covers sourdough starters, kneading techniques, and baking the perfect crusty loaf. Ingredients provided.",
-    "image": "https://picsum.photos/seed/Culinary/600/400",
+    "image": "https://i.ibb.co.com/YFXYNS79/23306493-1911-i126-031-S-m005-c13-video-blogger-compositions-set-03.jpg",
     "category": "Culinary"
   },
   {
     "skillId": 6,
-    "skillName": "Digital Photography 101",
+    "skillName": "Digital Photography ",
     "providerName": "Emily Carter",
     "providerEmail": "emily@skillswap.com",
     "providerImage": "https://randomuser.me/api/portraits/women/28.jpg",
@@ -74,7 +74,7 @@
     "rating": 4.6,
     "slotsAvailable": 6,
     "description": "Master your DSLR or mirrorless camera. Learn about aperture, shutter speed, ISO, composition, and lighting to take your photos from snapshots to professional-quality images.",
-    "image": "https://picsum.photos/seed/Arts-Crafts/600/400",
+    "image": "https://i.ibb.co.com/5JVSprH/24644548-Huge-camera-and-tiny-people-taking-pictures.jpg",
     "category": "Arts & Crafts"
   },
   {
@@ -87,7 +87,7 @@
     "rating": 4.9,
     "slotsAvailable": 1,
     "description": "One-on-one personal training session tailored to your fitness goals. Whether you want to build muscle, lose weight, or improve your overall health, I will create a personalized plan for you.",
-    "image": "https://picsum.photos/seed/Fitness/600/400",
+    "image": "https://i.ibb.co.com/gLp917t2/image.png",
     "category": "Fitness"
   },
   {
@@ -100,7 +100,7 @@
     "rating": 4.7,
     "slotsAvailable": 4,
     "description": "Learn the basics of home repair, including fixing leaky faucets, patching drywall, and other common household issues. Gain the confidence to tackle small projects on your own.",
-    "image": "https://picsum.photos/seed/Home-Skills/600/400",
+    "image": "https://i.ibb.co.com/N2s7X6Xw/image.png",
     "category": "Home Skills"
   },
   {
@@ -113,7 +113,7 @@
     "rating": 4.8,
     "slotsAvailable": 5,
     "description": "Go beyond SUM and AVERAGE. Master pivot tables, VLOOKUP, macros, and data visualization to become an Excel power user.",
-    "image": "https://picsum.photos/seed/Technology/600/400",
+    "image": "https://i.ibb.co.com/sp8rpBDJ/image.png",
     "category": "Technology"
   },
   {
@@ -126,7 +126,7 @@
     "rating": 4.9,
     "slotsAvailable": 3,
     "description": "Experience the therapeutic art of pottery. This beginner's class will guide you through centering clay and throwing basic forms like cylinders and bowls on the potter's wheel.",
-    "image": "https://picsum.photos/seed/Arts-Crafts/600/400",
+    "image": "https://i.ibb.co.com/VpzCVPJ8/tiny-man-woman-holding-paintbrush-decorating-handmade-vase-74855-20393.jpg",
     "category": "Arts & Crafts"
   },
   {

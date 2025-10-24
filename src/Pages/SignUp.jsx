@@ -18,11 +18,11 @@ const SignUp = () => {
     if (password.length < 6) {
       toast.error("Password must be at least 6 characters long.");
       return;
-    } else if (!/[A-Z]/.test(password)) {
-      toast.error("Password must contain at least one uppercase letter.");
+    } else if (!/[a-z]/.test(password)) {
+      toast.error("Password must contain a lowercase letter.");
       return;
-    } else if (!/[!@#$%^&*]/.test(password)) {
-      toast.error("Password must contain at least one special character.");
+    } else if (!/[A-Z]/.test(password)) {
+      toast.error("Password must contain an uppercase letter.");
       return;
     }
     createUserWithEmailAndPassword(auth, email, password)
@@ -30,7 +30,11 @@ const SignUp = () => {
         toast.success("Account created successfully!");
       })
       .catch((error) => {
-        toast.error(`Error: ${error.message}`);
+        if (error.code === "auth/email-already-in-use") {
+          toast.error(
+            "User already exists in the database. Please use a different email."
+          );
+        }
       });
   };
   return (
@@ -57,7 +61,7 @@ const SignUp = () => {
                   name="name"
                   type="text"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border-2 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-300 focus:border-red-300 sm:text-sm"
                 />
               </div>
             </div>
@@ -73,7 +77,7 @@ const SignUp = () => {
                   id="photoURL"
                   name="photoURL"
                   type="url"
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border-2 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-300 focus:border-red-300 sm:text-sm"
                 />
               </div>
             </div>
@@ -91,7 +95,7 @@ const SignUp = () => {
                   type="email"
                   autoComplete="email"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border-2 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-300 focus:border-red-300 sm:text-sm"
                 />
               </div>
             </div>
@@ -109,7 +113,7 @@ const SignUp = () => {
                   type={showPassword ? "text" : "password"}
                   autoComplete="new-password"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border-2 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-300 focus:border-red-300 sm:text-sm"
                 />
                 <div className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
                   <button
@@ -131,24 +135,7 @@ const SignUp = () => {
               </button>
             </div>
           </form>
-          <div className="mt-6">
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300"></div>
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 text-gray-500">Or continue with</span>
-              </div>
-            </div>
-            <div className="mt-6">
-              <button className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-[#fbd3d1] text-sm font-medium text-gray-500 hover:bg-gray-50">
-                <span className="flex items-center gap-1">
-                  {" "}
-                  <FaGoogle /> Sign in with Google
-                </span>
-              </button>
-            </div>
-          </div>
+
           <p className="mt-2 text-center text-sm text-gray-600">
             Already have an account?{" "}
             <Link

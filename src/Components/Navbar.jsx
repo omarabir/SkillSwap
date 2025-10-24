@@ -34,7 +34,7 @@ const Navbar = () => {
                   Courses
                 </NavLink>
 
-                <NavLink to="/profile" className={navLinkClass}>
+                <NavLink to="/myprofile" className={navLinkClass}>
                   My Profile
                 </NavLink>
               </div>

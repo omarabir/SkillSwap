@@ -6,6 +6,7 @@ import CourseDetails from "../Pages/CourseDetails";
 import NotFoundPage from "../Pages/NotFoundPage";
 import SignUp from "../Pages/SignUp";
 import Login from "../Pages/Login";
+import MyProfile from "../Pages/MyProfile";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         path: "/login",
         Component: Login,
       },
+      {
+        path: "/myprofile",
+        Component: MyProfile,
+      }
     ],
   },
 ]);

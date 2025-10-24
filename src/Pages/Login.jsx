@@ -18,24 +18,27 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         toast.success("Logged in successfully!");
       })
       .catch((error) => {
-        toast.error(`Error: ${error.message}`);
+        console.log(error.code);
+        if (error.code == "auth/invalid-credential") {
+          toast.error("Incorrect password. Please try again.");
+        } else if (error.code == "auth/user-not-found") {
+          toast.error("No user found with this email. Please sign up.");
+        }
       });
   };
 
-
   const handleGoogleLogin = () => {
     signInWithPopup(auth, googleProvider)
-      .then(() => {
-        toast.success("Logged in successfully!");
+      .then((result) => {
+        console.log(result);
       })
-      .catch((error) => {
-        toast.error(`Error: ${error.message}`);
+      .catch((err) => {
+        console.log(err);
       });
   };
   return (
@@ -47,7 +50,7 @@ const Login = () => {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-[#fae5e3] py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className="bg-[#fae5e3] py-8 px-4 shadow-lg sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleLogin}>
             <div>
               <label
@@ -63,7 +66,7 @@ const Login = () => {
                   type="email"
                   autoComplete="email"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border-2 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-300 focus:border-red-300 sm:text-sm"
                 />
               </div>
             </div>
@@ -82,7 +85,7 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   autoComplete="current-password"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border-2 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-red-300 focus:border-red-300 sm:text-sm"
                 />
                 <div className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
                   <button
@@ -133,7 +136,7 @@ const Login = () => {
               >
                 <span className="flex items-center gap-1">
                   {" "}
-                  <FaGoogle /> Sign in with Google
+                  <FaGoogle /> Login with Google
                 </span>
               </button>
             </div>
