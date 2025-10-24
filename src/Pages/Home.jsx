@@ -6,6 +6,7 @@ import LoadingSpinner from "../Components/LoadingSpinner";
 import AOS from "aos";
 import HowItWorks from "../Components/HowItWorks";
 import TopProviders from "../Components/TopProviders";
+import Testimonials from "../Components/Testimonials";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -59,6 +60,7 @@ const Home = () => {
 
       <HowItWorks></HowItWorks>
       <TopProviders skills={skills}></TopProviders>
+      <Testimonials></Testimonials>
     </div>
   );
 };
