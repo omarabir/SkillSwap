@@ -13,7 +13,7 @@ const HowItWorks = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div data-aos="fade-right">
+          <div data-aos="fade-down">
             <div className="flex items-center justify-center h-16 w-16 rounded-full  bg-[#fbd2d1]  text-[#e63c3b] mx-auto mb-4">
               <span className="text-2xl font-bold">1</span>
             </div>
@@ -23,7 +23,7 @@ const HowItWorks = () => {
               categories.
             </p>
           </div>
-          <div data-aos="fade-up">
+          <div data-aos="fade-down">
             <div className="flex items-center justify-center h-16 w-16 rounded-full bg-[#fbd2d1]  text-[#e63c3b] mx-auto mb-4">
               <span className="text-2xl font-bold">2</span>
             </div>
@@ -33,7 +33,7 @@ const HowItWorks = () => {
               schedule.
             </p>
           </div>
-          <div data-aos="fade-left">
+          <div data-aos="fade-down">
             <div className="flex items-center justify-center h-16 w-16 rounded-full  bg-[#fbd2d1]  text-[#e63c3b] mx-auto mb-4">
               <span className="text-2xl font-bold">3</span>
             </div>
