@@ -3,10 +3,13 @@ import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
 import { Link, useNavigate, useLocation } from "react-router";
 import toast from "react-hot-toast";
 import { AuthContext } from "../Context/AuthContext";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../Firebase/firebase";
 
+const googleProvider = new GoogleAuthProvider();
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { signInFunc, signInWithGoogleFunc } = useContext(AuthContext);
+  const { signInFunc } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const handleLogin = (e) => {
@@ -35,21 +38,36 @@ const Login = () => {
         }
       });
   };
-
-  const handleGoogleLogin = () => {
-    signInWithGoogleFunc()
-      .then(() => {
+  const handleGoogleLogin = (e) => {
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        const user = result.user;
         toast.success("Logged in successfully!");
         const from = location.state?.from?.pathname || "/";
         navigate(from, { replace: true });
       })
-      .catch((err) => {
-        console.error(err);
-        toast.error(err.message || "Google sign-in failed");
+      .catch((error) => {
+        console.error(error);
+        toast.error(
+          error.message || "Failed to log in with Google. Please try again."
+        );
       });
   };
+
+  //   const handleGoogleLogin = () => {
+  //     signInWithGoogleFunc()
+  //       .then(() => {
+  //         toast.success("Logged in successfully!");
+  //         const from = location.state?.from?.pathname || "/";
+  //         navigate(from, { replace: true });
+  //       })
+  //       .catch((err) => {
+  //         console.error(err);
+  //         toast.error(err.message || "Google sign-in failed");
+  //       });
+  //   };
   return (
-    <div className="min-h-screen  flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen px-4 rounded-lg flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Log in to your account

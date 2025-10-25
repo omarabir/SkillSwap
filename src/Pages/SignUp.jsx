@@ -35,7 +35,7 @@ const SignUp = () => {
 
     createUserWithEmailandPasswordFunc(email, password)
       .then(async (result) => {
-        // Update profile if name or photo provided
+   
         try {
           if (name || photoURL) {
             await updateProfile(result.user, {
@@ -47,7 +47,6 @@ const SignUp = () => {
           navigate("/");
         } catch (profileError) {
           console.error("Error updating profile:", profileError);
-          // Still navigate since account was created
           toast.success("Account created! Profile update failed.");
           navigate("/");
         }
@@ -73,7 +72,7 @@ const SignUp = () => {
       });
   };
   return (
-    <div className="min-h-screen  flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen px-4 rounded-lg flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Create your account

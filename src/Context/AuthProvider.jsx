@@ -5,11 +5,11 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signInWithPopup,
+//   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../Firebase/firebase";
 
-const googleProvider = new GoogleAuthProvider();
+// const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
@@ -26,14 +26,14 @@ const AuthProvider = ({ children }) => {
   const signInFunc = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
-  const signInWithGoogleFunc = () => {
-    return signInWithPopup(auth, googleProvider);
-  };
+//   const signInWithGoogleFunc = () => {
+//     return signInWithPopup(auth, googleProvider);
+//   };
 
   const authInfo = {
     createUserWithEmailandPasswordFunc,
     signInFunc,
-    signInWithGoogleFunc,
+    // signInWithGoogleFunc,
     user,
     setUser
   };

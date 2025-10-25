@@ -7,14 +7,12 @@ import { AuthContext } from "../Context/AuthContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Subscribe to auth state changes and force rerender on change
     const unsub = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        // Always create a new object to ensure state updates
         const userData = {
           displayName: currentUser.displayName,
           photoURL: currentUser.photoURL,
@@ -26,10 +24,8 @@ const Navbar = () => {
         setUser(null);
       }
     });
-
-    // Cleanup subscription on unmount
     return () => unsub();
-  }, []);
+  }, [setUser]);
 
   const navLinkClass = ({ isActive }) =>
     `px-3 py-2 rounded-md text-lg font-medium transition-colors ${
@@ -40,6 +36,7 @@ const Navbar = () => {
     <nav className="bg-[#faf0f0] sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          {/* Logo */}
           <Link
             to="/"
             className="flex items-center gap-1 text-2xl font-bold text-[#e42625]"
@@ -52,6 +49,7 @@ const Navbar = () => {
             SkillSwap
           </Link>
 
+          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
             <NavLink to="/" className={navLinkClass}>
               Home
@@ -66,31 +64,37 @@ const Navbar = () => {
             )}
           </div>
 
-          <div className="hidden md:flex items-center space-x-3">
-            {user ? (
-              <>
-                <div className="relative group">
-                  {user.photoURL ? (
-                    <img
-                      src={user.photoURL}
-                      alt={user.displayName || "User avatar"}
-                      className="h-10 w-10 rounded-full object-cover"
-                    />
-                  ) : (
-                    <div className="h-10 w-10 rounded-full bg-[#ffefef] text-[#e42625] flex items-center justify-center font-bold">
-                      {user.displayName
-                        ? user.displayName
-                            .split(" ")
-                            .map((n) => n[0])
-                            .join("")
-                            .slice(0, 2)
-                        : "U"}
-                    </div>
-                  )}
-                  <div className="absolute left-1/2 -translate-x-1/2 -bottom-10 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                    {user.displayName || user.email}
+          {/* Right side: Avatar + Buttons */}
+          <div className="flex items-center space-x-3">
+            {/* Avatar (always visible) */}
+            {user && (
+              <div className="relative group">
+                {user.photoURL ? (
+                  <img
+                    src={user.photoURL}
+                    alt={user.displayName || "User avatar"}
+                    className="h-10 w-10 rounded-full object-cover border-2 border-[#ffbaba]"
+                  />
+                ) : (
+                  <div className="h-10 w-10 rounded-full bg-[#ffefef] text-[#e42625] flex items-center justify-center font-bold border-2 border-[#ffbaba]">
+                    {user.displayName
+                      ? user.displayName
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")
+                          .slice(0, 2)
+                      : "U"}
                   </div>
+                )}
+                <div className="absolute left-1/2 -translate-x-1/2 -bottom-10 bg-[#ffc4c4] text-[#e42625] font-semibold text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                  {user.displayName || user.email}
                 </div>
+              </div>
+            )}
+
+            {/* Auth Buttons */}
+            <div className="hidden md:flex items-center space-x-3">
+              {user ? (
                 <button
                   onClick={() => {
                     signOut(auth).then(() => {
@@ -101,62 +105,63 @@ const Navbar = () => {
                 >
                   Logout
                 </button>
-              </>
-            ) : (
-              <>
-                <Link
-                  to="/login"
-                  className="px-4 py-2 text-sm font-medium text-[#FF1E1E] border border-[#FF1E1E] rounded-md hover:bg-[#FF1E1E] hover:text-white transition-all"
-                >
-                  Login
-                </Link>
-                <Link
-                  to="/signup"
-                  className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] rounded-md hover:opacity-90 transition-all"
-                >
-                  Sign Up
-                </Link>
-              </>
-            )}
-          </div>
-
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-gray-700 hover:bg-[#fbd2d1] focus:outline-none focus:ring-2 focus:ring-red-400"
-            >
-              {isMenuOpen ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
               ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                <>
+                  <Link
+                    to="/login"
+                    className="px-4 py-2 text-sm font-medium text-[#FF1E1E] border border-[#FF1E1E] rounded-md hover:bg-[#FF1E1E] hover:text-white transition-all"
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    to="/signup"
+                    className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] rounded-md hover:opacity-90 transition-all"
+                  >
+                    Sign Up
+                  </Link>
+                </>
               )}
-            </button>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 rounded-md text-gray-700 hover:bg-[#fbd2d1] focus:outline-none focus:ring-2 focus:ring-red-400"
+              >
+                {isMenuOpen ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -195,20 +200,36 @@ const Navbar = () => {
           )}
 
           <div className="flex flex-col w-4/5 gap-2 mt-4">
-            <Link
-              to="/login"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-center px-4 py-2 text-sm font-medium text-[#FF1E1E] border border-[#FF1E1E] rounded-md hover:bg-[#FF1E1E] hover:text-white transition-all"
-            >
-              Login
-            </Link>
-            <Link
-              to="/signup"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] rounded-md hover:opacity-90 transition-all"
-            >
-              Sign Up
-            </Link>
+            {user ? (
+              <button
+                onClick={() => {
+                  signOut(auth).then(() => {
+                    navigate("/", { replace: true });
+                    setIsMenuOpen(false);
+                  });
+                }}
+                className="text-center px-4 py-2 text-sm font-medium text-[#FF1E1E] border border-[#FF1E1E] rounded-md hover:bg-[#FF1E1E] hover:text-white transition-all"
+              >
+                Logout
+              </button>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-center px-4 py-2 text-sm font-medium text-[#FF1E1E] border border-[#FF1E1E] rounded-md hover:bg-[#FF1E1E] hover:text-white transition-all"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/signup"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] rounded-md hover:opacity-90 transition-all"
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

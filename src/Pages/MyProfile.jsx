@@ -33,7 +33,7 @@ const MyProfile = () => {
       });
 
       const updatedUser = auth.currentUser;
-      setUser({ ...updatedUser }); // 👈 context এ আপডেট
+      setUser({ ...updatedUser }); 
 
       setIsEditing(false);
       toast.success("Profile updated successfully!");
@@ -154,7 +154,7 @@ const MyProfile = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="outline outline-red-500  text-red-500 py-2 px-4 rounded-md hover:text-red-700 hover:font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center">
@@ -194,7 +194,7 @@ const MyProfile = () => {
                       setName(user.displayName || "");
                       setPhotoURL(user.photoURL || "");
                     }}
-                    className="flex-1 bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="py-2 px-4 bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white  rounded-md hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Cancel
                   </button>
