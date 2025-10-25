@@ -9,69 +9,64 @@ const Navbar = () => {
     `px-3 py-2 rounded-md text-lg font-medium transition-colors ${
       isActive ? "text-red-600 font-bold" : "text-gray-700 hover:text-red-600"
     }`;
+
   return (
-    <nav className="bg-[#faf0f0] pt-5  sticky top-0 z-50">
+    <nav className="bg-[#faf0f0] sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex  items-center justify-between h-16">
-          <div className="flex items-center flex-1 justify-between">
+        {/* Main Navbar */}
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link
+            to="/"
+            className="flex items-center gap-1 text-2xl font-bold text-[#e42625]"
+          >
+            <img
+              src={logo}
+              alt="SkillSwap Logo"
+              className="h-20 w-20 object-contain"
+            />
+            SkillSwap
+          </Link>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-6">
+            <NavLink to="/" className={navLinkClass}>
+              Home
+            </NavLink>
+            <NavLink to="/all-skills" className={navLinkClass}>
+              Courses
+            </NavLink>
+            <NavLink to="/myprofile" className={navLinkClass}>
+              My Profile
+            </NavLink>
+          </div>
+
+          {/* Desktop Buttons */}
+          <div className="hidden md:flex items-center space-x-3">
             <Link
-              to="/"
-              className="shrink-0 text-2xl font-bold flex items-center gap-1"
+              to="/login"
+              className="px-4 py-2 text-sm font-medium text-[#FF1E1E] border border-[#FF1E1E] rounded-md hover:bg-[#FF1E1E] hover:text-white transition-all"
             >
-              <img
-                src={logo}
-                alt="SkillSwap Logo"
-                className="h-32 w-32 -ml-[35px] -mr-10"
-              />
-              <h4 className="text-[#e42625]"> SkillSwap</h4>
+              Login
             </Link>
-            <div className="hidden md:block flex-1">
-              <div className="flex items-baseline justify-center space-x-4 ">
-                <NavLink to="/" className={navLinkClass}>
-                  Home
-                </NavLink>
-                <NavLink to="/all-skills" className={navLinkClass}>
-                  Courses
-                </NavLink>
-
-                <NavLink to="/myprofile" className={navLinkClass}>
-                  My Profile
-                </NavLink>
-              </div>
-            </div>
+            <Link
+              to="/signup"
+              className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] rounded-md hover:opacity-90 transition-all"
+            >
+              Sign Up
+            </Link>
           </div>
 
-          <div className="hidden md:block">
-            <div className="ml-4 flex items-center md:ml-6">
-              <div className="space-x-2">
-                <Link
-                  to="/login"
-                  className="text-[#FF1E1E] hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 border-2 border-transparent hover:border-0 hover:bg-linear-to-r from-[#FF1E1E] to-[#FF6560] relative bg-linear-to-r from-[#FF1E1E] to-[#FF6560] bg-clip-text"
-                >
-                  <span className="absolute inset-0 rounded-md border-2 border-transparent bg-linear-to-r from-[#FF1E1E] to-[#FF6560] -z-10 opacity-20 hover:opacity-100 transition-all duration-300"></span>
-                  Login
-                </Link>
-                <Link
-                  to="/signup"
-                  className="bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white px-4 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-all duration-300 hover:shadow-md"
-                >
-                  Sign Up
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="-mr-2 flex md:hidden">
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              type="button"
-              className="bg-[#fbd2d1] inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+              className="p-2 rounded-md text-gray-700 hover:bg-[#fbd2d1] focus:outline-none focus:ring-2 focus:ring-red-400"
             >
-              <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (
                 <svg
-                  className="h-6 w-6"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -79,14 +74,14 @@ const Navbar = () => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth="2"
+                    strokeWidth={2}
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
               ) : (
                 <svg
-                  className="h-6 w-6"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -94,7 +89,7 @@ const Navbar = () => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth="2"
+                    strokeWidth={2}
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
@@ -104,64 +99,53 @@ const Navbar = () => {
         </div>
       </div>
 
-      {isMenuOpen && (
-        <div className="md:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <NavLink
-              to="/"
-              className={navLinkClass}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/all-skills"
-              className={navLinkClass}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              All Skills
-            </NavLink>
-            {
-              <NavLink
-                to="/profile"
-                className={navLinkClass}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                My Profile
-              </NavLink>
-            }
-          </div>
+      {/* Mobile Dropdown */}
+      <div
+        className={`md:hidden bg-[#fff5f5] shadow-inner transition-all duration-300 ${
+          isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+        }`}
+      >
+        <div className="flex flex-col items-center py-4 space-y-3">
+          <NavLink
+            to="/"
+            className={navLinkClass}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/all-skills"
+            className={navLinkClass}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Courses
+          </NavLink>
+          <NavLink
+            to="/myprofile"
+            className={navLinkClass}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            My Profile
+          </NavLink>
 
-          <div className="pt-4 pb-3 border-t border-gray-200">
-            <div className="flex items-center px-5">
-              <div className="shrink-0">
-                <img className="h-10 w-10 rounded-full" src="" alt="" />
-              </div>
-              <div className="ml-3">
-                <div className="text-base font-medium leading-none text-gray-800"></div>
-                <div className="text-sm font-medium leading-none text-gray-500"></div>
-              </div>
-            </div>
-            <div className="px-2 space-y-2">
-              <Link
-                to="/login"
-                onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-left text-[#FF1E1E] hover:text-white px-3 py-2 rounded-md text-base font-medium transition-all duration-300 border-2 border-transparent hover:border-0 hover:bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] relative bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] bg-clip-text"
-              >
-                <span className="absolute inset-0 rounded-md border-2 border-transparent bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] -z-10 opacity-20 hover:opacity-100 transition-all duration-300"></span>
-                Login
-              </Link>
-              <Link
-                to="/signup"
-                onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-left bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white px-3 py-2 rounded-md text-base font-medium hover:opacity-90 transition-all duration-300 hover:shadow-md"
-              >
-                Sign Up
-              </Link>
-            </div>
+          <div className="flex flex-col w-4/5 gap-2 mt-4">
+            <Link
+              to="/login"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-center px-4 py-2 text-sm font-medium text-[#FF1E1E] border border-[#FF1E1E] rounded-md hover:bg-[#FF1E1E] hover:text-white transition-all"
+            >
+              Login
+            </Link>
+            <Link
+              to="/signup"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] rounded-md hover:opacity-90 transition-all"
+            >
+              Sign Up
+            </Link>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

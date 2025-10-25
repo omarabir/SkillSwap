@@ -7,6 +7,7 @@ import NotFoundPage from "../Pages/NotFoundPage";
 import SignUp from "../Pages/SignUp";
 import Login from "../Pages/Login";
 import MyProfile from "../Pages/MyProfile";
+import ForgotPassword from "../Pages/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,11 @@ const router = createBrowserRouter([
       {
         path: "/myprofile",
         Component: MyProfile,
-      }
+      },
+      {
+        path: "/forgotpassword",
+        Component: ForgotPassword,
+      },
     ],
   },
 ]);
