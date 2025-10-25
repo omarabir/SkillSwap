@@ -1,9 +1,35 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router";
 import logo from "../assets/logo.png";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../Firebase/firebase";
+import { AuthContext } from "../Context/AuthContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Subscribe to auth state changes and force rerender on change
+    const unsub = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        // Always create a new object to ensure state updates
+        const userData = {
+          displayName: currentUser.displayName,
+          photoURL: currentUser.photoURL,
+          email: currentUser.email,
+          uid: currentUser.uid,
+        };
+        setUser(userData);
+      } else {
+        setUser(null);
+      }
+    });
+
+    // Cleanup subscription on unmount
+    return () => unsub();
+  }, []);
 
   const navLinkClass = ({ isActive }) =>
     `px-3 py-2 rounded-md text-lg font-medium transition-colors ${
@@ -13,9 +39,7 @@ const Navbar = () => {
   return (
     <nav className="bg-[#faf0f0] sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Navbar */}
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <Link
             to="/"
             className="flex items-center gap-1 text-2xl font-bold text-[#e42625]"
@@ -28,7 +52,6 @@ const Navbar = () => {
             SkillSwap
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
             <NavLink to="/" className={navLinkClass}>
               Home
@@ -36,28 +59,67 @@ const Navbar = () => {
             <NavLink to="/all-skills" className={navLinkClass}>
               Courses
             </NavLink>
-            <NavLink to="/myprofile" className={navLinkClass}>
-              My Profile
-            </NavLink>
+            {user && (
+              <NavLink to="/myprofile" className={navLinkClass}>
+                My Profile
+              </NavLink>
+            )}
           </div>
 
-          {/* Desktop Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Link
-              to="/login"
-              className="px-4 py-2 text-sm font-medium text-[#FF1E1E] border border-[#FF1E1E] rounded-md hover:bg-[#FF1E1E] hover:text-white transition-all"
-            >
-              Login
-            </Link>
-            <Link
-              to="/signup"
-              className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] rounded-md hover:opacity-90 transition-all"
-            >
-              Sign Up
-            </Link>
+            {user ? (
+              <>
+                <div className="relative group">
+                  {user.photoURL ? (
+                    <img
+                      src={user.photoURL}
+                      alt={user.displayName || "User avatar"}
+                      className="h-10 w-10 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="h-10 w-10 rounded-full bg-[#ffefef] text-[#e42625] flex items-center justify-center font-bold">
+                      {user.displayName
+                        ? user.displayName
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")
+                            .slice(0, 2)
+                        : "U"}
+                    </div>
+                  )}
+                  <div className="absolute left-1/2 -translate-x-1/2 -bottom-10 bg-black text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    {user.displayName || user.email}
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    signOut(auth).then(() => {
+                      navigate("/", { replace: true });
+                    });
+                  }}
+                  className="px-3 py-2 text-sm font-medium text-[#FF1E1E] border border-[#FF1E1E] rounded-md hover:bg-[#FF1E1E] hover:text-white transition-all"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="px-4 py-2 text-sm font-medium text-[#FF1E1E] border border-[#FF1E1E] rounded-md hover:bg-[#FF1E1E] hover:text-white transition-all"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/signup"
+                  className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] rounded-md hover:opacity-90 transition-all"
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -102,7 +164,9 @@ const Navbar = () => {
       {/* Mobile Dropdown */}
       <div
         className={`md:hidden bg-[#fff5f5] shadow-inner transition-all duration-300 ${
-          isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+          isMenuOpen
+            ? "max-h-screen opacity-100"
+            : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
         <div className="flex flex-col items-center py-4 space-y-3">
@@ -120,13 +184,15 @@ const Navbar = () => {
           >
             Courses
           </NavLink>
-          <NavLink
-            to="/myprofile"
-            className={navLinkClass}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            My Profile
-          </NavLink>
+          {user && (
+            <NavLink
+              to="/myprofile"
+              className={navLinkClass}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              My Profile
+            </NavLink>
+          )}
 
           <div className="flex flex-col w-4/5 gap-2 mt-4">
             <Link

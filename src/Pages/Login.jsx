@@ -1,44 +1,51 @@
-import {
-  GoogleAuthProvider,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-} from "firebase/auth";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
-import { Link } from "react-router";
-import { auth } from "../Firebase/firebase";
+import { Link, useNavigate, useLocation } from "react-router";
 import toast from "react-hot-toast";
-const googleProvider = new GoogleAuthProvider();
+import { AuthContext } from "../Context/AuthContext";
+
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const { signInFunc, signInWithGoogleFunc } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-
-    signInWithEmailAndPassword(auth, email, password)
+    signInFunc(email, password)
       .then(() => {
         toast.success("Logged in successfully!");
+        const from = location.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error.code);
-        if (error.code == "auth/invalid-credential") {
+        console.error(error);
+        const code = error.code || "";
+        if (
+          code === "auth/wrong-password" ||
+          code === "auth/invalid-credential"
+        ) {
           toast.error("Incorrect password. Please try again.");
-        } else if (error.code == "auth/user-not-found") {
+        } else if (code === "auth/user-not-found") {
           toast.error("No user found with this email. Please sign up.");
+        } else {
+          toast.error(error.message || "Failed to log in. Please try again.");
         }
       });
   };
 
   const handleGoogleLogin = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        console.log(result);
+    signInWithGoogleFunc()
+      .then(() => {
+        toast.success("Logged in successfully!");
+        const from = location.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
+        toast.error(err.message || "Google sign-in failed");
       });
   };
   return (

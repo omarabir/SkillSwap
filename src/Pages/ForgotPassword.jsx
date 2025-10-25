@@ -9,7 +9,7 @@ const ForgotPassword = () => {
   const location = useLocation();
   const [email, setEmail] = useState("");
 
-  // login থেকে email পাঠালে এখানে দেখাবে
+ 
   useEffect(() => {
     if (location.state?.email) {
       setEmail(location.state.email);

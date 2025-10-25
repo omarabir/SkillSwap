@@ -1,14 +1,18 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
-import { auth } from "../Firebase/firebase";
-import { Link } from "react-router";
-import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
+import { updateProfile } from "firebase/auth";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router";
+import { FaEye, FaEyeSlash} from "react-icons/fa6";
 import toast from "react-hot-toast";
+import { AuthContext } from "../Context/AuthContext";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const { createUserWithEmailandPasswordFunc } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleSignup = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const form = e.target;
     const name = form.name.value;
     const photoURL = form.photoURL.value;
@@ -16,25 +20,56 @@ const SignUp = () => {
     const password = form.password.value;
 
     if (password.length < 6) {
+      setIsLoading(false);
       toast.error("Password must be at least 6 characters long.");
       return;
     } else if (!/[a-z]/.test(password)) {
+      setIsLoading(false);
       toast.error("Password must contain a lowercase letter.");
       return;
     } else if (!/[A-Z]/.test(password)) {
+      setIsLoading(false);
       toast.error("Password must contain an uppercase letter.");
       return;
     }
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        toast.success("Account created successfully!");
+
+    createUserWithEmailandPasswordFunc(email, password)
+      .then(async (result) => {
+        // Update profile if name or photo provided
+        try {
+          if (name || photoURL) {
+            await updateProfile(result.user, {
+              displayName: name || null,
+              photoURL: photoURL || null,
+            });
+          }
+          toast.success("Account created successfully!");
+          navigate("/");
+        } catch (profileError) {
+          console.error("Error updating profile:", profileError);
+          // Still navigate since account was created
+          toast.success("Account created! Profile update failed.");
+          navigate("/");
+        }
       })
       .catch((error) => {
+        console.error("Signup error:", error);
         if (error.code === "auth/email-already-in-use") {
           toast.error(
             "User already exists in the database. Please use a different email."
           );
+        } else if (error.code === "auth/invalid-email") {
+          toast.error("Please enter a valid email address.");
+        } else if (error.code === "auth/weak-password") {
+          toast.error("Password is too weak. Please use a stronger password.");
+        } else {
+          toast.error(
+            error.message || "Failed to create account. Please try again."
+          );
         }
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
   return (
@@ -129,9 +164,10 @@ const SignUp = () => {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-linear-to-r from-[#FF1E1E] to-[#FF6560] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                disabled={isLoading}
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-linear-to-r from-[#FF1E1E] to-[#FF6560] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-70"
               >
-                Sign up
+                {isLoading ? "Creating Account..." : "Sign up"}
               </button>
             </div>
           </form>

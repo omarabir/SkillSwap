@@ -13,7 +13,10 @@ const CourseDetails = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
     toast.success("Your session request has been submitted!");
+    // Clear the form
+    form.reset();
   };
 
   return (
