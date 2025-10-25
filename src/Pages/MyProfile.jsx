@@ -46,7 +46,7 @@ const MyProfile = () => {
 
   if (!user)
     return (
-      <div className="max-w-3xl mx-auto py-20 px-4 text-center">
+      <div className="max-w-xl mx-auto py-20 px-4 text-center">
         <p className="text-lg text-gray-700 mb-4">You are not signed in.</p>
         <Link
           to="/login"
@@ -63,8 +63,8 @@ const MyProfile = () => {
         className="bg-[#fbd2d1] shadow-lg rounded-lg overflow-hidden"
         data-aos="fade-up"
       >
-        <div className="p-8">
-          <div className="md:flex md:items-center">
+        <div className="p-8 text-center">
+          <div className="flex-col justify-center mx-auto md:flex md:items-center">
             <div className="md:shrink-0">
               <img
                 className="h-32 w-32 rounded-full mx-auto md:mx-0 object-cover"
@@ -74,7 +74,7 @@ const MyProfile = () => {
                 alt="User avatar"
               />
             </div>
-            <div className="mt-4 text-center md:mt-0 md:ml-6 md:text-left">
+            <div className="mt-4 text-center md:mt-0 md:ml-6">
               <h1 className="text-3xl font-bold text-gray-900">
                 {user.displayName || "No name set"}
               </h1>
@@ -82,11 +82,11 @@ const MyProfile = () => {
             </div>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8 flex justify-center  ">
             {!isEditing ? (
               <button
                 onClick={() => setIsEditing(true)}
-                className="w-full md:w-1/3 bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] text-white py-2 px-4 rounded-md hover:opacity-95 transition-colors"
+                className="w-full md:w-1/3 bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white py-2 px-4 rounded-md hover:opacity-95 transition-colors"
               >
                 Update Profile
               </button>
@@ -190,7 +190,7 @@ const MyProfile = () => {
                     onClick={() => {
                       setIsEditing(false);
                       setErrors({});
-                      // reset fields to current user values
+                  
                       setName(user.displayName || "");
                       setPhotoURL(user.photoURL || "");
                     }}

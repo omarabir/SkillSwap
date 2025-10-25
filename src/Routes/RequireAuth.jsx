@@ -1,32 +1,22 @@
-import React, { useEffect, useState } from "react";
+import { useContext } from "react";
 import { Navigate, useLocation } from "react-router";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../Firebase/firebase";
+import { AuthContext } from "../Context/AuthContext";
 
 const RequireAuth = ({ children }) => {
-  const [initializing, setInitializing] = useState(true);
-  const [user, setUser] = useState(null);
+  const { user, loading } = useContext(AuthContext);
   const location = useLocation();
 
-  useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => {
-      setUser(u);
-      setInitializing(false);
-    });
-    return () => unsub();
-  }, []);
-
-  if (initializing) {
-    // simple loading placeholder
+  if (loading) {
     return (
-      <div className="w-full h-64 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#FF1E1E]"></div>
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-500"></div>
       </div>
     );
   }
 
   if (!user) {
-    return <Navigate to="/login" replace state={{ from: location }} />;
+    // Save the attempted location before redirecting
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   return children;

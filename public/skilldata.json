@@ -139,7 +139,7 @@
     "rating": 5.0,
     "slotsAvailable": 6,
     "description": "Conquer your fear of public speaking. Learn techniques for confident delivery, storytelling, and engaging your audience in a supportive and constructive environment.",
-    "image": "https://picsum.photos/seed/Business/600/400",
+    "image": "https://i.ibb.co.com/zTKnhbDv/speech-illustration-768x576.png",
     "category": "Business"
   },
   {
@@ -152,7 +152,7 @@
     "rating": 4.7,
     "slotsAvailable": 10,
     "description": "Unleash your inner author. This workshop explores character development, plot structure, and finding your unique voice through a series of fun and inspiring writing exercises.",
-    "image": "https://picsum.photos/seed/Writing/600/400",
+    "image": "https://i.ibb.co.com/BHfJbRwC/creative-writing-quill-feathers-vector-design-generative-ai-illustration-hands-pen-surrounded-colorf.jpg",
     "category": "Writing"
   },
   {
@@ -165,7 +165,7 @@
     "rating": 4.9,
     "slotsAvailable": 4,
     "description": "Learn to mix, shake, and stir like a pro. This class covers classic cocktails, essential bar tools, and the art of balancing flavors to create your own signature drinks. Must be 21+.",
-    "image": "https://picsum.photos/seed/Culinary/600/400",
+    "image": "https://i.ibb.co.com/8nZ4smy5/images-q-tbn-ANd9-Gc-RNUd-uz-Dr-IRWQo-XXi-ZZu-Inu-zc-V1-Mnjn-N6-Kg-s.jpg",
     "category": "Culinary"
   },
   {
@@ -178,7 +178,7 @@
     "rating": 4.8,
     "slotsAvailable": 3,
     "description": "Build your first cross-platform mobile app. This course introduces you to the fundamentals of React Native, from setting up your environment to building UI components and managing state.",
-    "image": "https://picsum.photos/seed/Technology/600/400",
+    "image": "https://i.ibb.co.com/cKrvmT8d/reactnative.webp",
     "category": "Technology"
   },
   {
@@ -191,7 +191,7 @@
     "rating": 4.6,
     "slotsAvailable": 7,
     "description": "Demystify Search Engine Optimization. Learn the basics of keyword research, on-page SEO, and link building to improve your website's visibility on Google.",
-    "image": "https://picsum.photos/seed/Marketing/600/400",
+    "image": "https://i.ibb.co.com/jP20sQJn/seo-optimization-vector-design-concept.jpg",
     "category": "Marketing"
   },
   {
@@ -204,7 +204,7 @@
     "rating": 4.9,
     "slotsAvailable": 5,
     "description": "Learn climbing safety, basic knots, and movement techniques in a controlled indoor environment. A great full-body workout and a fun challenge. Equipment provided.",
-    "image": "https://picsum.photos/seed/Fitness/600/400",
+    "image": "https://i.ibb.co.com/Rkd61CHQ/depositphotos-226771574-stock-illustration-climbers-on-a-climbing-wall.webp",
     "category": "Fitness"
   },
   {
@@ -217,7 +217,7 @@
     "rating": 5.0,
     "slotsAvailable": 4,
     "description": "Go beyond the basic moves. Learn key opening principles, middle-game tactics, and endgame strategies to outwit your opponents. For intermediate players.",
-    "image": "https://picsum.photos/seed/Hobbies/600/400",
+    "image": "https://media.istockphoto.com/id/1298603397/vector/father-teaches-daughter-to-play-chess.jpg?s=612x612&w=0&k=20&c=DjXU2GzAB-BgIFK7O7kxdb5CPyAGz_YXA5UPJRQXdUY=",
     "category": "Hobbies"
   },
   {
@@ -230,33 +230,7 @@
     "rating": 4.8,
     "slotsAvailable": 8,
     "description": "Learn the fundamentals of knitting, including how to cast on, knit, purl, and cast off. Create your first scarf in this cozy and relaxing class. Yarn and needles included.",
-    "image": "https://picsum.photos/seed/Arts-Crafts/600/400",
+    "image": "https://i.ibb.co.com/VW81tHML/woman-hands-are-knitting-with-knitting-needles-knitting-process-top-view-on-hands-holding-needles-ho.jpg",
     "category": "Arts & Crafts"
-  },
-  {
-    "skillId": 19,
-    "skillName": "Sustainable Gardening",
-    "providerName": "Pete Moss",
-    "providerEmail": "pete@skillswap.com",
-    "providerImage": "https://randomuser.me/api/portraits/men/15.jpg",
-    "price": 30,
-    "rating": 4.9,
-    "slotsAvailable": 6,
-    "description": "Learn how to grow your own food using organic and sustainable practices. This workshop covers composting, natural pest control, and companion planting for a healthy garden.",
-    "image": "https://picsum.photos/seed/Home-Skills/600/400",
-    "category": "Home Skills"
-  },
-  {
-    "skillId": 20,
-    "skillName": "Podcasting for Beginners",
-    "providerName": "Ben Sound",
-    "providerEmail": "ben@skillswap.com",
-    "providerImage": "https://randomuser.me/api/portraits/men/49.jpg",
-    "price": 45,
-    "rating": 4.7,
-    "slotsAvailable": 5,
-    "description": "Launch your own podcast. This session covers everything from choosing your topic and recording equipment to editing audio and distributing your show to major platforms.",
-    "image": "https://picsum.photos/seed/Music/600/400",
-    "category": "Music"
   }
 ]

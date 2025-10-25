@@ -7,8 +7,9 @@ import NotFoundPage from "../Pages/NotFoundPage";
 import SignUp from "../Pages/SignUp";
 import Login from "../Pages/Login";
 import MyProfile from "../Pages/MyProfile";
-import RequireAuth from "./RequireAuth";
+import RequireAuth from "./PrivateRoute";
 import ForgotPassword from "../Pages/ForgotPassword";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -31,9 +32,9 @@ const router = createBrowserRouter([
         path: "/skill/:id",
         loader: () => fetch("/skilldata.json"),
         element: (
-          <RequireAuth>
+          <PrivateRoute>
             <CourseDetails />
-          </RequireAuth>
+          </PrivateRoute>
         ),
       },
       {
@@ -47,9 +48,9 @@ const router = createBrowserRouter([
       {
         path: "/myprofile",
         element: (
-          <RequireAuth>
+          <PrivateRoute>
             <MyProfile />
-          </RequireAuth>
+          </PrivateRoute>
         ),
       },
       {
