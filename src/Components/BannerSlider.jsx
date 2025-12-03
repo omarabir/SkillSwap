@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import { Link } from "react-router";
 
 const BannerSlider = () => {
   const slides = [
@@ -25,7 +26,7 @@ const BannerSlider = () => {
     },
   ];
   return (
-    <div className="relative h-[60vh] md:h-[80vh] m-2 lg:m-10 rounded-4xl overflow-hidden">
+    <div className="relative w-full  h-[60vh] md:h-[80vh] mt-4 rounded-4xl overflow-hidden">
       <Swiper
         modules={[Autoplay, Pagination, Navigation, EffectFade]}
         effect="fade"
@@ -50,9 +51,12 @@ const BannerSlider = () => {
                     {slide.title}
                   </h1>
                   <p>{slide.subtitle}</p>
-                  <button className="mt-8 px-2 lg:px-8 py-1 lg:py-3 bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white font-semibold rounded-lg shadow-md  transition-colors">
+                  <Link
+                    to="/all-skills"
+                    className="mt-8 px-2 lg:px-8 py-1 lg:py-3 bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white font-semibold rounded-lg shadow-md  transition-colors btn"
+                  >
                     Get Started
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

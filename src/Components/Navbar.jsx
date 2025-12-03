@@ -33,18 +33,15 @@ const Navbar = () => {
     }`;
 
   return (
-    <nav className="bg-[#faf0f0] sticky top-0 z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-[#fae5e3] sticky top-0 z-50 rounded-b-3xl shadow-md px-4 lg:px-8 py-3">
+      <div className=" ">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-1 text-2xl font-bold text-[#e42625]"
-          >
+          <Link to="/" className="flex items-center gap-1 text-3xl font-bold">
             <img
               src={logo}
               alt="SkillSwap Logo"
-              className="h-20 w-20 object-contain"
+              className="h-44 w-40  -ml-[50px] -mr-16 object-contain"
             />
             SkillSwap
           </Link>
@@ -56,6 +53,12 @@ const Navbar = () => {
             </NavLink>
             <NavLink to="/all-skills" className={navLinkClass}>
               Courses
+            </NavLink>
+            <NavLink to="/about-us" className={navLinkClass}>
+              About Us
+            </NavLink>
+            <NavLink to="/contact-us" className={navLinkClass}>
+              Contact Us
             </NavLink>
             {user && (
               <NavLink to="/myprofile" className={navLinkClass}>

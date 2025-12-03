@@ -10,6 +10,8 @@ import MyProfile from "../Pages/MyProfile";
 import RequireAuth from "./PrivateRoute";
 import ForgotPassword from "../Pages/ForgotPassword";
 import PrivateRoute from "./PrivateRoute";
+import AboutUs from "../Components/AboutUs";
+import ContactUs from "../Components/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
             <CourseDetails />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/about-us",
+        Component: AboutUs,
+      },
+      {
+        path: "/contact-us",
+        Component: ContactUs,
       },
       {
         path: "/signup",

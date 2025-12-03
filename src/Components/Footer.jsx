@@ -14,16 +14,15 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="SkillSwap Logo"
-                className="h-32 w-32 -ml-[50px] -mr-10"
+                className="h-44 w-40  -ml-[50px] -mr-16 object-contain"
               />
-              <h4 className="text-[#e42625]"> SkillSwap</h4>
+              <h4 className="text-3xl font-bold text-white"> SkillSwap</h4>
             </Link>
             <p className="text-gray-400 text-base my-3">
               Connecting local talent and learners. Share your passion, learn a
               new skill.
             </p>
-            <div className="flex space-x-6">
-             
+            <div className="flex space-x-2">
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -46,14 +45,13 @@ const Footer = () => {
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <span className="sr-only">Twitter</span>
                 <svg
-                  className="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-5 bi bi-twitter-x"
                   fill="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
+                  viewBox="0 0 16 16"
                 >
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
                 </svg>
               </a>
               <a

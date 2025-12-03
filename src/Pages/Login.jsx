@@ -54,18 +54,7 @@ const Login = () => {
       });
   };
 
-  //   const handleGoogleLogin = () => {
-  //     signInWithGoogleFunc()
-  //       .then(() => {
-  //         toast.success("Logged in successfully!");
-  //         const from = location.state?.from?.pathname || "/";
-  //         navigate(from, { replace: true });
-  //       })
-  //       .catch((err) => {
-  //         console.error(err);
-  //         toast.error(err.message || "Google sign-in failed");
-  //       });
-  //   };
+ 
   return (
     <div className="min-h-screen px-4 rounded-lg flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
