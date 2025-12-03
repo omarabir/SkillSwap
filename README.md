@@ -319,16 +319,6 @@ User → Navbar (Router) → Page/Component
 
 ---
 
-## 👨‍💻 Developer
-
-**Your Name**
-
-- GitHub: [@yourname](https://github.com/yourname)
-- Email: your.email@example.com
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourname)
-
----
-
 ## 🙏 Acknowledgments
 
 - Firebase for authentication and database services
