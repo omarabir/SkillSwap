@@ -13,6 +13,7 @@ const AllSkills = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [categories, setCategories] = useState([]);
   const [filteredSkills, setFilteredSkills] = useState([]);
+  const [sortOrder, setSortOrder] = useState("none"); // none, asc, desc (rating only)
 
   useEffect(() => {
     Aos.init({ duration: 800, once: true });
@@ -39,7 +40,7 @@ const AllSkills = () => {
     setIsFiltering(true);
     const delay = setTimeout(() => {
       const term = search.toLowerCase();
-      const filtered = skills.filter((skill) => {
+      let filtered = skills.filter((skill) => {
         const matchesCategory =
           selectedCategory === "All" || skill.category === selectedCategory;
         const matchesSearch =
@@ -48,12 +49,19 @@ const AllSkills = () => {
         return matchesCategory && matchesSearch;
       });
 
+      // Sort by rating only
+      if (sortOrder === "asc") {
+        filtered = filtered.sort((a, b) => a.rating - b.rating);
+      } else if (sortOrder === "desc") {
+        filtered = filtered.sort((a, b) => b.rating - a.rating);
+      }
+
       setFilteredSkills(filtered);
       setIsFiltering(false);
     }, 400);
 
     return () => clearTimeout(delay);
-  }, [search, selectedCategory, skills, isLoading]);
+  }, [search, selectedCategory, sortOrder, skills, isLoading]);
 
   return (
     <div className=" min-h-screen">
@@ -78,25 +86,9 @@ const AllSkills = () => {
                 placeholder="Search by name or description..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm 
-                           focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm bg-white
+                           focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
               />
-              <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                <svg
-                  className="h-5 w-5 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 
-                    3.476l4.817 4.817a1 1 0 01-1.414 
-                    1.414l-4.816-4.816A6 6 0 012 8z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
             </div>
 
             <div className="w-full md:w-auto">
@@ -104,13 +96,26 @@ const AllSkills = () => {
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm 
-                           focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                           focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white"
               >
                 {categories.map((category) => (
                   <option key={category} value={category}>
                     {category === "All" ? "All Categories" : category}
                   </option>
                 ))}
+              </select>
+            </div>
+
+            <div className="w-full md:w-auto">
+              <select
+                value={sortOrder}
+                onChange={(e) => setSortOrder(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm 
+                           focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white"
+              >
+                <option value="none">Sort by Rating</option>
+                <option value="asc">Rating: Low to High</option>
+                <option value="desc">Rating: High to Low</option>
               </select>
             </div>
           </div>
@@ -129,12 +134,12 @@ const AllSkills = () => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-16" >
+            <div className="text-center py-16">
               <h3 className="text-2xl font-semibold text-gray-700">
                 No Skills Found
               </h3>
               <p className="text-gray-500 mt-2">
-                Try adjusting your search or filter.
+                Try adjusting your search, filter, or sorting.
               </p>
             </div>
           )}

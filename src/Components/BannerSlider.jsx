@@ -53,7 +53,7 @@ const BannerSlider = () => {
                   <p>{slide.subtitle}</p>
                   <Link
                     to="/all-skills"
-                    className="mt-8 px-2 lg:px-8 py-1 lg:py-3 bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white font-semibold rounded-lg shadow-md  transition-colors btn"
+                    className="mt-8 px-2 lg:px-8 py-1 lg:py-3 bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white font-semibold rounded-lg shadow-md  transition-colors btn  hover:from-[#FF6560] hover:to-[#FF1E1E] border-none"
                   >
                     Get Started
                   </Link>

@@ -8,7 +8,7 @@
     "price": 25,
     "rating": 4.8,
     "slotsAvailable": 3,
-    "description": "Learn the fundamentals of acoustic guitar, including chords, strumming patterns, and basic music theory. Perfect for absolute beginners. No prior experience needed. Guitars available for rent.",
+    "description": "This beginner-friendly guitar program is designed for anyone who has always wanted to play but never knew where to start. You’ll learn how to hold and tune the guitar properly, understand the difference between common acoustic chords, and practice simple strumming patterns that make songs flow. We’ll talk about rhythm, timing, and the basics of music theory in a way that feels natural—not overwhelming. By the end of the sessions, you’ll be able to play a few full songs and recognize the structure behind the music you hear every day. No need to bring your own instrument—guitars are available for rent, and you’ll get enough practical guidance to continue practicing confidently at home.",
     "image": "https://i.ibb.co.com/BVwWJnXN/80-c2-Vs-Zl9pc29s-YXRpb24t-MDg.jpg",
     "category": "Music"
   },
@@ -21,7 +21,7 @@
     "price": 15,
     "rating": 4.9,
     "slotsAvailable": 5,
-    "description": "Immersive Spanish conversation practice to build fluency and confidence. We will cover common phrases, cultural nuances, and practical vocabulary for travel and daily life.",
+    "description": "This conversation-focused Spanish class helps you speak naturally and confidently without getting stuck in grammar books. Each session is built around real-life situations—greetings, ordering food, navigating travel, meeting new people, and expressing emotions. You’ll pick up cultural nuances, tone, and the rhythm of everyday Spanish so you don't sound robotic or memorized. Maria keeps the environment light and supportive, encouraging you to speak as much as possible while gently correcting mistakes. Whether you're preparing for a trip or simply want a new skill, you'll walk away sounding more fluent and understanding how the language actually works in daily life.",
     "image": "https://i.ibb.co.com/nswDVRpK/10170121.jpg",
     "category": "Language"
   },
@@ -34,7 +34,7 @@
     "price": 30,
     "rating": 4.7,
     "slotsAvailable": 4,
-    "description": "A hands-on introduction to Python programming. You'll learn about variables, data types, loops, and functions by building simple applications. Ideal for aspiring developers.",
+    "description": "This hands-on Python course introduces programming through simple, approachable examples. You’ll learn what variables are, how loops help automate repetitive tasks, and how functions make your code cleaner and easier to manage. Instead of dumping theory on you, we build small projects together so you see the results of your code immediately—calculators, basic data processors, and simple interactive scripts. We’ll also talk about problem-solving techniques used by real developers, giving you a solid foundation to move into web development, automation, or data science later. No prior coding knowledge required—if you can think logically, you can learn to code.",
     "image": "https://i.ibb.co.com/FbsMD2cW/12064756-4882467.jpg",
     "category": "Technology"
   },
@@ -47,7 +47,7 @@
     "price": 20,
     "rating": 5.0,
     "slotsAvailable": 8,
-    "description": "A gentle Vinyasa flow class focused on connecting breath with movement, followed by a guided meditation session to reduce stress and improve focus. All levels are welcome.",
+    "description": "This gentle Vinyasa flow session blends smooth movement with mindful breathing to help you unwind physically and mentally. Aisha guides you through easy-to-follow poses that reduce stiffness, improve posture, and bring a sense of calm into your day. After the movement portion, you’ll settle into a guided meditation designed to quiet mental noise and increase focus. The class is beginner-friendly but still engaging for those with yoga experience. Whether you're trying to improve flexibility, reduce stress, or simply find a moment of peace, this session helps you reconnect with yourself in a warm and encouraging environment.",
     "image": "https://i.ibb.co.com/gLTdLxMH/8247648-3860223.jpg",
     "category": "Wellness"
   },
@@ -60,7 +60,7 @@
     "price": 40,
     "rating": 4.8,
     "slotsAvailable": 2,
-    "description": "Unlock the secrets to baking delicious artisanal bread at home. This workshop covers sourdough starters, kneading techniques, and baking the perfect crusty loaf. Ingredients provided.",
+    "description": "This artisanal bread workshop teaches you how to make bakery-quality loaves right in your own kitchen. Paolo walks you through creating and maintaining a sourdough starter, understanding dough hydration, and kneading with proper technique to build structure and flavor. You’ll bake rustic, crackling breads with golden crusts and airy interiors while learning how temperature, fermentation, and timing influence the final result. Everything is provided—ingredients, tools, and hands-on guidance. By the end of the workshop, you'll not only take home your own fresh loaf but also the confidence to experiment with new recipes and styles.",
     "image": "https://i.ibb.co.com/YFXYNS79/23306493-1911-i126-031-S-m005-c13-video-blogger-compositions-set-03.jpg",
     "category": "Culinary"
   },
@@ -73,7 +73,7 @@
     "price": 35,
     "rating": 4.6,
     "slotsAvailable": 6,
-    "description": "Master your DSLR or mirrorless camera. Learn about aperture, shutter speed, ISO, composition, and lighting to take your photos from snapshots to professional-quality images.",
+    "description": "This photography class helps you finally take control of your DSLR or mirrorless camera instead of relying on auto mode. Emily breaks down aperture, shutter speed, ISO, and how they work together to shape the mood of a photo. You’ll explore composition, framing, natural lighting, and simple techniques that instantly make images more cinematic. With practical exercises and personalized feedback, you’ll learn to capture portraits, landscapes, and everyday moments with a professional touch. Even if you’re a complete beginner, you’ll leave with photos you’re genuinely proud of—and the skills to keep improving.",
     "image": "https://i.ibb.co.com/5JVSprH/24644548-Huge-camera-and-tiny-people-taking-pictures.jpg",
     "category": "Arts & Crafts"
   },
@@ -86,7 +86,7 @@
     "price": 50,
     "rating": 4.9,
     "slotsAvailable": 1,
-    "description": "One-on-one personal training session tailored to your fitness goals. Whether you want to build muscle, lose weight, or improve your overall health, I will create a personalized plan for you.",
+    "description": "This one-on-one personal training session is fully customized to match your fitness level, goals, and lifestyle. Mike starts by understanding your strengths, challenges, and what motivates you. Then he builds a structured workout plan—strength training, mobility, fat loss, conditioning, or a blend of everything—so you get maximum results without wasting time. You’ll learn proper form, safe progression, and the small adjustments that make your workouts more effective. Whether you're aiming to build muscle, drop weight, or simply feel stronger and healthier, Mike’s guidance keeps you focused, accountable, and confident.",
     "image": "https://i.ibb.co.com/gLp917t2/image.png",
     "category": "Fitness"
   },
@@ -99,7 +99,7 @@
     "price": 30,
     "rating": 4.7,
     "slotsAvailable": 4,
-    "description": "Learn the basics of home repair, including fixing leaky faucets, patching drywall, and other common household issues. Gain the confidence to tackle small projects on your own.",
+    "description": "This practical home repair class teaches you to fix the most common household issues with confidence. You’ll learn how to stop a leaky faucet, patch up damaged drywall, replace simple fixtures, and handle basic tools safely. David breaks everything down step by step, showing not just the ‘how’ but also the ‘why’ behind each repair. You’ll also pick up tips on preventative maintenance—small habits that save money and keep your home in great shape. Perfect for beginners, new homeowners, or anyone tired of calling a technician for easy fixes.",
     "image": "https://i.ibb.co.com/N2s7X6Xw/image.png",
     "category": "Home Skills"
   },
@@ -112,7 +112,7 @@
     "price": 45,
     "rating": 4.8,
     "slotsAvailable": 5,
-    "description": "Go beyond SUM and AVERAGE. Master pivot tables, VLOOKUP, macros, and data visualization to become an Excel power user.",
+    "description": "This advanced Excel course takes you far beyond basic formulas. You’ll learn to build powerful pivot tables, automate repetitive tasks with macros, and use lookup functions like VLOOKUP and XLOOKUP to organize messy data. Dave also walks you through creating dashboards and visualizations that make numbers easy to understand at a glance. Each concept is paired with real-world examples so you can apply what you learn immediately—whether you work with finance, marketing, operations, or data analysis. By the end, you’ll feel like Excel is working for you, not the other way around.",
     "image": "https://i.ibb.co.com/sp8rpBDJ/image.png",
     "category": "Technology"
   },
@@ -125,7 +125,7 @@
     "price": 55,
     "rating": 4.9,
     "slotsAvailable": 3,
-    "description": "Experience the therapeutic art of pottery. This beginner's class will guide you through centering clay and throwing basic forms like cylinders and bowls on the potter's wheel.",
+    "description": "This hands-on pottery class introduces you to the soothing and creative world of working with clay. Clara teaches you how to center the clay on the wheel, control your movements, and shape cylinders, bowls, and simple forms. You’ll discover how the texture, moisture, and speed of the wheel affect the outcome—and how to correct mistakes without stress. The atmosphere is relaxed and calming, making it perfect for beginners or anyone looking for a mindful, tactile escape from screens. You’ll finish with your own handmade pottery piece and a new appreciation for the craft.",
     "image": "https://i.ibb.co.com/VpzCVPJ8/tiny-man-woman-holding-paintbrush-decorating-handmade-vase-74855-20393.jpg",
     "category": "Arts & Crafts"
   },
@@ -138,7 +138,7 @@
     "price": 60,
     "rating": 5.0,
     "slotsAvailable": 6,
-    "description": "Conquer your fear of public speaking. Learn techniques for confident delivery, storytelling, and engaging your audience in a supportive and constructive environment.",
+    "description": "This confidence-building workshop helps you overcome stage fright and speak with clarity, presence, and purpose. James guides you through practical techniques—breathing control, vocal projection, pacing, and body language—so you can communicate with authority without sounding rehearsed. You’ll also explore storytelling strategies that keep your audience engaged, along with exercises to strengthen your spontaneous speaking skills. The environment is supportive and encouraging, making it safe to practice, make mistakes, and improve. Perfect for students, professionals, or anyone who wants to become a more compelling communicator.",
     "image": "https://i.ibb.co.com/zTKnhbDv/speech-illustration-768x576.png",
     "category": "Business"
   },
@@ -151,7 +151,7 @@
     "price": 25,
     "rating": 4.7,
     "slotsAvailable": 10,
-    "description": "Unleash your inner author. This workshop explores character development, plot structure, and finding your unique voice through a series of fun and inspiring writing exercises.",
+    "description": "This writing workshop helps you unlock your imagination and develop your personal voice through thoughtful, enjoyable exercises. Sophia breaks down character development, world-building, pacing, and crafting believable dialogue. You’ll experiment with different styles and prompts that stretch your creativity while learning how to shape raw ideas into compelling stories. The sessions are discussion-driven, allowing you to share your work and get supportive, constructive feedback. Whether you're a beginner or an experienced writer looking to sharpen your craft, this workshop gives you momentum and inspiration.",
     "image": "https://i.ibb.co.com/BHfJbRwC/creative-writing-quill-feathers-vector-design-generative-ai-illustration-hands-pen-surrounded-colorf.jpg",
     "category": "Writing"
   },
@@ -164,7 +164,7 @@
     "price": 65,
     "rating": 4.9,
     "slotsAvailable": 4,
-    "description": "Learn to mix, shake, and stir like a pro. This class covers classic cocktails, essential bar tools, and the art of balancing flavors to create your own signature drinks. Must be 21+.",
+    "description": "This mixology class teaches you how to make cocktails with precision, creativity, and flair. Leo walks you through essential bar tools, mixing techniques, and the flavor science behind balancing sweetness, acidity, and bitterness. You’ll learn to craft classics like the Old Fashioned, Mojito, and Martini, then experiment with customizing your own signature drinks. Along the way, you’ll pick up tips on garnish presentation, ice selection, and building a simple home bar. Ideal for aspiring bartenders, party hosts, or anyone who appreciates a well-made drink. Must be 21+.",
     "image": "https://i.ibb.co.com/8nZ4smy5/images-q-tbn-ANd9-Gc-RNUd-uz-Dr-IRWQo-XXi-ZZu-Inu-zc-V1-Mnjn-N6-Kg-s.jpg",
     "category": "Culinary"
   },
@@ -177,7 +177,7 @@
     "price": 70,
     "rating": 4.8,
     "slotsAvailable": 3,
-    "description": "Build your first cross-platform mobile app. This course introduces you to the fundamentals of React Native, from setting up your environment to building UI components and managing state.",
+    "description": "This React Native course gives you a practical, beginner-friendly path to building mobile apps for both iOS and Android. You’ll learn how to set up your development environment, create reusable components, handle navigation, and manage app data with state. Nate explains each concept with simple examples and real-world use cases, so the ideas stick. By the end of the course, you’ll have a fully functioning mini-app and the skills to expand it further or start new projects. Perfect for web developers wanting to go mobile or beginners aiming to enter app development.",
     "image": "https://i.ibb.co.com/cKrvmT8d/reactnative.webp",
     "category": "Technology"
   },
@@ -190,7 +190,7 @@
     "price": 40,
     "rating": 4.6,
     "slotsAvailable": 7,
-    "description": "Demystify Search Engine Optimization. Learn the basics of keyword research, on-page SEO, and link building to improve your website's visibility on Google.",
+    "description": "This beginner-friendly SEO class simplifies the strategies used by successful websites to rise in Google rankings. You’ll learn how keyword research works, how to optimize content so Google understands it, and how to build backlinks that grow your site’s authority. Olivia shares practical tools, checklists, and examples you can start using immediately—even if you’re working on a small blog or new business website. You’ll also understand how search engines think, how updates affect rankings, and how to drive consistent organic traffic without paying for ads.",
     "image": "https://i.ibb.co.com/jP20sQJn/seo-optimization-vector-design-concept.jpg",
     "category": "Marketing"
   },
@@ -203,7 +203,7 @@
     "price": 50,
     "rating": 4.9,
     "slotsAvailable": 5,
-    "description": "Learn climbing safety, basic knots, and movement techniques in a controlled indoor environment. A great full-body workout and a fun challenge. Equipment provided.",
+    "description": "This indoor rock climbing session gives you a safe, exciting introduction to the sport. Rocko teaches you how to secure harnesses properly, tie essential knots, and understand basic climbing techniques that help you move smoothly and conserve energy. The environment is fully supervised and beginner-friendly, so you can challenge yourself without fear. You’ll learn footwork, balance, and problem-solving as you navigate different climbing routes. It’s a full-body workout disguised as an adventure—and with equipment included, all you need to bring is enthusiasm.",
     "image": "https://i.ibb.co.com/Rkd61CHQ/depositphotos-226771574-stock-illustration-climbers-on-a-climbing-wall.webp",
     "category": "Fitness"
   },
@@ -216,7 +216,7 @@
     "price": 20,
     "rating": 5.0,
     "slotsAvailable": 4,
-    "description": "Go beyond the basic moves. Learn key opening principles, middle-game tactics, and endgame strategies to outwit your opponents. For intermediate players.",
+    "description": "This strategy-focused class helps intermediate chess players level up their game. Gary breaks down opening principles so you start with strong positions, teaches you how to build threats in the middle game, and shows practical endgame patterns that help you convert small advantages into wins. You’ll analyze real matches, spot tactical motifs like forks and pins, and learn how to think several moves ahead without overwhelming yourself. Whether you want to perform better in tournaments or simply beat your usual opponents, this class gives you the tools to play smarter and more confidently.",
     "image": "https://media.istockphoto.com/id/1298603397/vector/father-teaches-daughter-to-play-chess.jpg?s=612x612&w=0&k=20&c=DjXU2GzAB-BgIFK7O7kxdb5CPyAGz_YXA5UPJRQXdUY=",
     "category": "Hobbies"
   },
@@ -229,7 +229,7 @@
     "price": 15,
     "rating": 4.8,
     "slotsAvailable": 8,
-    "description": "Learn the fundamentals of knitting, including how to cast on, knit, purl, and cast off. Create your first scarf in this cozy and relaxing class. Yarn and needles included.",
+    "description": "This cozy beginner's knitting class teaches you the foundations of the craft in a warm, comfortable environment. Helen shows you how to cast on, knit, purl, fix simple mistakes, and finally cast off your work properly. By the end of the session, you’ll be well on your way to completing your first handmade scarf. You’ll also learn how to choose yarn, understand needle sizes, and read simple patterns so you can continue practicing at home. With yarn and needles included, it’s a relaxing, creative way to unwind and make something beautiful.",
     "image": "https://i.ibb.co.com/VW81tHML/woman-hands-are-knitting-with-knitting-needles-knitting-process-top-view-on-hands-holding-needles-ho.jpg",
     "category": "Arts & Crafts"
   }

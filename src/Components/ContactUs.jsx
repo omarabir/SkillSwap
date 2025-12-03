@@ -3,6 +3,11 @@ import React from "react";
 import toast from "react-hot-toast";
 
 const ContactUs = () => {
+  const handleContact = (e) => {
+    e.preventDefault();
+    toast.success("Message sent successfully!");
+    e.target.closest("form").reset();
+  };
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +26,7 @@ const ContactUs = () => {
             data-aos="fade-right"
           >
             <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-            <form>
+            <form onSubmit={handleContact}>
               <div className="mb-4">
                 <label
                   htmlFor="name"
@@ -33,6 +38,7 @@ const ContactUs = () => {
                   type="text"
                   id="name"
                   name="name"
+                  required
                   className="w-full px-4 py-2 border border-gray-300 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF6560]"
                 />
               </div>
@@ -44,6 +50,7 @@ const ContactUs = () => {
                   Email
                 </label>
                 <input
+                  required
                   type="email"
                   id="email"
                   name="email"
@@ -58,6 +65,7 @@ const ContactUs = () => {
                   Message
                 </label>
                 <textarea
+                  required
                   id="message"
                   name="message"
                   rows="5"
@@ -65,11 +73,6 @@ const ContactUs = () => {
                 ></textarea>
               </div>
               <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  toast.success("Message sent successfully!");
-                  e.target.closest("form").reset();
-                }}
                 type="submit"
                 className="w-full px-8 py-3 bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white font-semibold rounded-lg shadow-md hover:from-[#FF6560] hover:to-[#FF1E1E] transition-all duration-300 btn"
               >

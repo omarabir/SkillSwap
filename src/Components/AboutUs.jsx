@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import { Link } from "react-router";
 
 const AboutUs = () => {
+  const { user } = useContext(AuthContext);
+
   return (
     <section className="py-16 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,8 +33,12 @@ const AboutUs = () => {
               here to help you on your journey.
             </p>
             <div className="mt-8">
-              <button className="px-8 py-3 bg-gradient-to-r from-[#FF1E1E] to-[#FF6560] text-white font-semibold rounded-lg shadow-md hover:from-[#FF6560] hover:to-[#FF1E1E] transition-all duration-300 btn">
-                Join Our Community
+              <button className="px-8 py-3 bg-linear-to-r from-[#FF1E1E] to-[#FF6560] text-white font-semibold rounded-lg shadow-md hover:from-[#FF6560] hover:to-[#FF1E1E] transition-all duration-300 btn">
+                {user ? (
+                  <Link to="/all-skills">Explore Skills</Link>
+                ) : (
+                  <Link to="/login">join SkillSwap</Link>
+                )}
               </button>
             </div>
           </div>

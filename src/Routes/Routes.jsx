@@ -33,11 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/skill/:id",
         loader: () => fetch("/skilldata.json"),
-        element: (
-          <PrivateRoute>
-            <CourseDetails />
-          </PrivateRoute>
-        ),
+        element: <CourseDetails />,
       },
       {
         path: "/about-us",
